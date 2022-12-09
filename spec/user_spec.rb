@@ -1,5 +1,4 @@
 require 'rails_helper'
-# require_relative '../app/models/user.rb'
 RSpec.describe User do
   user = User.new(photo: 'http://example.com', bio: 'Hi there', posts_counter: 0)
   before { user.save }
