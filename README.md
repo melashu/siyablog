@@ -49,8 +49,11 @@ Clone this repository to your desired folder:
 
 `https://github.com/melashu/siyablog.git`
 
-cd `siyablog`
+`cd siyablog`
 
+`bundler install`
+
+`rails db:create db:migrate`
 ### Usage
 
 To run the project, execute the following command:
