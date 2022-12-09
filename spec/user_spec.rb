@@ -12,4 +12,11 @@ RSpec.describe User do
     user2.save
     expect(user2).to be_valid
   end
+
+  it 'recent_post should return 1' do
+    user2 = User.create(name: 'Meshu', photo: 'http://example.com', bio: 'Hi there', posts_counter: 0)
+    Post.create(author: user2, title: 'Rails intro', text: 'Hello rails intro', comment_counter: 2,
+                like_counter: 0)
+    expect(user2.recent_post).to be 1
+  end
 end
