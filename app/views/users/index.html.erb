@@ -1,8 +1,11 @@
 <h1>List of all users</h1>
+<p><%= @user.size%></p>
 <%
-10.times do |n|
+@user.each do |user|
     %>
-    <h2>User <%= n+1 %><h2>
+    <h2> <%=user.name %><h2>
     <%
 end
 %>
+<%= print 'meshu'%>
+<%= link_to 'Move to user 1', user_path(10)%>

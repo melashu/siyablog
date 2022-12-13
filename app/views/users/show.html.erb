@@ -1,8 +1,10 @@
-<h1>Here is a list of posts for User <%=@user_id%></h1>
+<h1>Here is a list of posts for User<%=@user_id%></h1>
 <%
 5.times do |n|
     %>
     <h2>Post <%= n+1 %><h2>
     <%
 end
+
 %>
+<%= link_to 'Back to user', users_path %>
