@@ -1,18 +1,11 @@
-<h3>
+<div class='detail-post'>
 
+    <div class='top-detail'>
+     <strong>Posts # <%=@post.id%> <%= @post.author.name%></strong>
+     <strong>Comments: <%= @post.comment_counter || 0%>, Likes: <%= Like.where(post: @post).size%></strong>
+    </div>
+    <p class='desc'><%=@post.text%></p>
 
-<div style="width:40%; border:2px #333 solid; padding:10px">
-Post <%=@post_id%> by user<%=@user%>
+    <%= render 'comment', post: @post%>
 
-<p>
-lorem ipsum dolor sit amet, consectet
-lorem ipsum dolor sit amet, consectet
-lorem ipsum dolor sit amet, consectet
-lorem ipsum dolor sit amet, consectet
-lorem ipsum dolor sit amet, consectet
-lorem ipsum dolor sit amet, consectet
-lorem ipsum dolor sit amet, consectet
-lorem ipsum dolor sit amet, consectet 
-</p>
 </div>
-</h3>

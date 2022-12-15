@@ -1,11 +1,6 @@
+<div class='user-container'>
 <h1>List of all users</h1>
-<p><%= @user.size%></p>
-<%
-@user.each do |user|
-    %>
-    <h2> <%=user.name %><h2>
-    <%
-end
-%>
-<%= print 'meshu'%>
-<%= link_to 'Move to user 1', user_path(10)%>
+    <% @author.each do |user|%>
+    <%= render 'user', user: user %>
+    <%end%>
+</div>

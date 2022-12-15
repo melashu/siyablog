@@ -1,0 +1,10 @@
+
+<%= link_to user_path(user), class:'user-link' do %>
+<div class='user-card'>
+<%= image_tag (user.photo), class:'user-img'%>
+<div class='card-body'>
+    <h2 class='user-name'><%= user.name%></h2>
+    <p>Number of posts: <%=Post.where(author:user).length || 0 %></p>
+</div>
+</div>
+<%end%>

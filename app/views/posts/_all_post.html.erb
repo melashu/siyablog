@@ -1,0 +1,8 @@
+
+<div class='post'>
+    <%= link_to user_post_path(user, post), class:'user-link' do%>
+    <h2>Title: <%= post.title%> </h2>
+    <p><%= post.text%></p>
+    <%end%>
+<p>Comments: <%= Comment.where(post: post).size%>, Likes: <%= Like.where(post: post).size%></p>
+</div>

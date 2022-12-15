@@ -1,15 +1,126 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: rgba(21, 21, 22, 0.877);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  color: #f2f2f2;
+}
+
+.logo img {
+  width: 90px;
+  height: 60px;
+}
+
+ul {
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 24px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #5c4de6;
+}
+
+main {
+  min-height: 75vh;
+}
+
+.user-container {
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.user-card {
+  display: flex;
+  gap: 24px;
+  margin: 5px;
+  border-bottom: 2px solid rgba(206, 204, 204, 0.911);
+  padding: 5px;
+}
+
+.card-body {
+  background-color: #f2f2f2;
+  width: 100%;
+  padding: 10px;
+}
+
+.user-img {
+  width: 120px;
+  height: 120px;
+}
+
+.user-posts {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  padding: 10px;
+}
+
+.bio-container {
+  width: 50%;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.btn-all-post {
+  background-color: #5c4de6;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  display: block;
+  padding: 5px;
+  margin: 8px;
+}
+
+.btn-all-post:hover {
+  background-color: #f2f2f2;
+  color: #5c4de6;
+}
+
+.comment {
+  padding: 10px;
+  border: #f2f2f2 solid 2px;
+  background-color: #f2f2f2;
+  border-bottom: 2px solid rgba(206, 204, 204, 0.911);
+}
+
+.top-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  font-weight: 900;
+}
+
+footer {
+  background-color: rgba(21, 21, 22, 0.877);
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: #f2f2f2;
+}
+
+footer a,
+footer strong {
+  color: #5c4de6;
+}
