@@ -1,5 +1,6 @@
 <div class='user-container'>
 <h1>List of all users</h1>
-
-<%= render partial: 'user', collection: @author %>
+    <% @author.each do |user|%>
+    <%= render 'user', user: user %>
+    <%end%>
 </div>

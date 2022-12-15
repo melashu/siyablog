@@ -2,7 +2,7 @@
 
     <div class='top-detail'>
      <strong>Posts # <%=@post.id%> <%= @post.author.name%></strong>
-     <strong>Comments: <%= Comment.where(post: @post).size%>, Likes: <%= Like.where(post: @post).size%></strong>
+     <strong>Comments: <%= @post.comment_counter || 0%>, Likes: <%= Like.where(post: @post).size%></strong>
     </div>
     <p class='desc'><%=@post.text%></p>
 

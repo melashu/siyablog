@@ -1,10 +1,10 @@
 <div class='post-container'>
-<%= render partial: '/users/user', collection: @user %>
+<%= render '/users/user', user: @user %>
 
 <div class='post-comment'>
 
-<% Post.where(author: @user[0]).each do |post|%>
-<%= render 'all_post', post: post, user: @user[0]%>
+<% Post.where(author: @user).each do |post|%>
+<%= render 'all_post', post: post, user: @user%>
 
 <%= render 'comment', post: post%>
 

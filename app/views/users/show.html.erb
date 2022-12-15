@@ -1,14 +1,14 @@
 <div class='user-posts'>
-<%= render partial: 'user', collection: @user %>
+<%= render 'user', user: @user %>
 
     <div class='bio-container'>
     <h2>Bio </h2>
-    <p class='bio'><%= @user[0].bio%> </p>
+    <p class='bio'><%= @user.bio%> </p>
     </div>
 
-<%= render partial: 'post', collection: Post.where(author: @user[0]).last(3)%>
+<%= render partial: 'post', collection: @user.recent_post%>
 
 
-<%= link_to 'See all post', user_posts_path(@user[0]), class: 'btn-all-post'%>
+<%= link_to 'See all post', user_posts_path(@user), class: 'btn-all-post'%>
 
 </div>
