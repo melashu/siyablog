@@ -1,0 +1,6 @@
+<div class='comment'>
+<h4>Users comment on this post</h4>
+    <% Comment.where(post: post).each do |comment|%>
+     <p><strong><%=comment.author.name%> </strong> : <span><%=comment.text%></span></p>
+    <%end%>
+</div>
