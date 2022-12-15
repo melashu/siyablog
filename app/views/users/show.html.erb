@@ -1,10 +1,14 @@
-<h1>Here is a list of posts for User<%=@user_id%></h1>
-<%
-5.times do |n|
-    %>
-    <h2>Post <%= n+1 %><h2>
-    <%
-end
+<div class='user-posts'>
+<%= render partial: 'user', collection: @user %>
 
-%>
-<%= link_to 'Back to user', users_path %>
+    <div class='bio-container'>
+    <h2>Bio </h2>
+    <p class='bio'><%= @user[0].bio%> </p>
+    </div>
+
+<%= render partial: 'post', collection: Post.where(author: @user[0]).last(3)%>
+
+
+<%= link_to 'See all post', user_posts_path(@user[0]), class: 'btn-all-post'%>
+
+</div>

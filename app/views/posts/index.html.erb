@@ -1,13 +1,15 @@
-<h2>
-All posts by User<%= @user_id%> 
-<%
-6.times do |n|
-    %>
-    <h2>Post <%= n+1 %><h2>
-    <%
-end
-%>
+<div class='post-container'>
+<%= render partial: '/users/user', collection: @user %>
 
+<div class='post-comment'>
 
+<% Post.where(author: @user[0]).each do |post|%>
+<%= render 'all_post', post: post, user: @user[0]%>
 
-</h2>
+<%= render 'comment', post: post%>
+
+<%end%>
+<%= link_to 'Pagination', users_path, class: 'btn-all-post' %>
+<div>
+
+</div>
