@@ -1,0 +1,16 @@
+<h4 style='color:green'><%=  flash[:error] %> </h4>
+
+
+<%= form_with model: user, url: user_posts_path, method: :post, scope: :user, class: 'add-comment-form' do |x|%>
+<div>
+<%= x.label :title%>
+<%= x.text_field :title, required: true, placeholder: 'Your title...'%> 
+<div>
+
+<div>
+<%= x.label :text, "Your Post"%>
+<%= x.text_area :text, size: '50x10', required: true, placeholder: 'Your message...'%>
+</div>
+<%= x.submit "Add post", class: 'post-button button'%>
+
+<%end%>
