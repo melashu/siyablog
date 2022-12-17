@@ -7,8 +7,6 @@
     </div>
 
 <%= render partial: 'post', collection: @user.recent_post%>
-
-
-<%= link_to 'See all post', user_posts_path(@user), class: 'btn-all-post'%>
+<%= link_to 'See all post', user_posts_path(@user), class: 'btn-all-post button'%>
 
 </div>
