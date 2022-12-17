@@ -1,4 +1,6 @@
 <div class='post-container'>
+<h4 style='color:green'><%=  flash[:success] %> </h4>
+<%= button_to "Add post", new_user_post_path, method: 'get', form_class: 'comment-form', class: 'button'%>
 <%= render '/users/user', user: @user %>
 
 <div class='post-comment'>
@@ -9,7 +11,7 @@
 <%= render 'comment', post: post%>
 
 <%end%>
-<%= link_to 'Pagination', users_path, class: 'btn-all-post' %>
+<%= link_to 'Pagination', users_path, class: 'btn-all-post button' %>
 <div>
 
 </div>

@@ -3,5 +3,5 @@
 <h2>Post Title: <%= post.title%> </h2>
 <p class='post-desc'><%= post.text%></p>
 <%end%>
-<p>Comments: <%= Comment.where(post: post).size%>, Likes: <%= Like.where(post: post).size%></p>
+<p>Comments: <%= post.comment_counter || 0%>, Likes: <%= post.like_counter || 0%></p>
 </div>
