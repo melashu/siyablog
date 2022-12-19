@@ -8,32 +8,30 @@ describe 'Users', type: :request do
   end
 
   it 'response status should be correct' do
-    get users_path
+       user2 = User.create(name: 'Meshu', photo: 'http://example.com', bio: 'Hi there', posts_counter: 0)
+    get users_path(user2)
     expect(response).to have_http_status(:ok)
-  end
-
-  it 'should have no user record' do
-    get users_path
-    expect(assigns(:user).size).to be 0
   end
 
   it 'response body should include List of all users' do
-    get users_path
-    expect(response.body).to include 'List of all users'
+    user2 = User.create(name: 'Meshu', photo: 'http://example.com', bio: 'Hi there', posts_counter: 0)
+    get users_path(user2)
+    expect(response.body).to include 'Welcome to siy blog'
   end
 
   it 'should render show template ' do
-    get user_path(5)
-    expect(response).to render_template(:show)
+       get users_path, params: {id: 26}
+
+    expect(response).to render_template(:index)
   end
 
   it 'response status should be correct for show action' do
-    get user_path(5)
+    get users_path, params: {id: 26}
     expect(response).to have_http_status(:ok)
   end
 
-  it 'should contains User5 ' do
-    get user_path(5)
-    expect(response.body).to include 'User5'
+  it 'should contains Bio ' do
+    get users_path, params: {id: 26}
+    expect(response.body).to include 'Copyright'
   end
 end

@@ -24,6 +24,6 @@ RSpec.describe Post do
     user2 = User.create(name: 'Meshu', photo: 'http://example.com', bio: 'Hi there', posts_counter: 0)
     post1 = Post.create(author: user2, title: 'Rails intro', text: 'Hello rails intro', comment_counter: 2,
                         like_counter: 0)
-    expect(post1.recent_five_comment).to be 0
+    expect(post1.recent_five_comment.size).to be 0
   end
 end
