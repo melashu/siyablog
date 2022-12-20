@@ -4,7 +4,7 @@
 <%= image_tag (user.photo), class:'user-img'%>
 <div class='card-body'>
     <h2 class='user-name'><%= user.name%></h2>
-    <p>Number of posts: <%= user.posts_counter || 0 %></p>
+    <p class ='number-of-post'>Number of posts: <%= user.posts_counter || 0 %></p>
 </div>
 </div>
 <%end%>
