@@ -18,7 +18,7 @@ describe User, type: :feature do
          all('.user-link').each do |user|
             user.click
             expect(page).to have_content('John')
-            expect(current_path).to eq user_path(@user1)
+            expect(current_path).to eq user_path(@user1) 
             expect(page).to have_content(@user1.bio)
          end
 
@@ -28,12 +28,9 @@ describe User, type: :feature do
         visit users_path
         expect(page).to have_content ('Number of posts: 3')
     end
-    # it 'can see the profile picture for each user.' do
-    #     visit users_path 
-    #     all_img = all('.user-card .user-img')
-    #     all_img.each do |img|
-    #      visit img[:src]
-    #         expect(current_path).to eq @user1.photo
-    #     end
-    # end
+    it 'can see the profile picture for each user.' do
+        visit users_path 
+       expect(page).to have_css("img", :count => 3)
+    
+    end
 end
