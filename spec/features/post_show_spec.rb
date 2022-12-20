@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 describe Post, type: :feature do
   before :each do
     @user1 = User.create(
@@ -17,18 +16,20 @@ describe Post, type: :feature do
     )
 
     @post1 = Post.create(
-      title: 'First Post', 
-      text: 'Here is my post', 
-      comment_counter: 0, 
+      title: 'First Post',
+      text: 'Here is my post',
+      comment_counter: 0,
       like_counter: 0,
-      author: @user1)
+      author: @user1
+    )
 
     @comment = Comment.create(
-      text: 'Here is my comment', 
-      author: @user2, 
-      post: @post1)
+      text: 'Here is my comment',
+      author: @user2,
+      post: @post1
+    )
 
-      visit("users/#{@user1.id}/posts/#{@post1.id}")    
+    visit("users/#{@user1.id}/posts/#{@post1.id}")
   end
   it 'should have the post title' do
     expect(page).to have_content(@post1.id)
