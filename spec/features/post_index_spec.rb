@@ -2,11 +2,21 @@ require 'rails_helper'
 
 describe Post, type: :feature do
   before :each do
-    
-    @user1 =  User.create(name: 'John', photo: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',bio:'Here my story', posts_counter: 3)
-    @user2 =  User.create(name: 'meshu', photo: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',bio:'Here my story', posts_counter: 0)
+    @user1 = User.create(
+      name: 'John',
+      photo: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
+      bio: 'Here my story',
+      posts_counter: 3
+    )
+    @user2 = User.create(
+      name: 'meshu',
+      photo: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
+      bio: 'Here my story',
+      posts_counter: 0
+    )
 
-    @post1 = Post.create(title: 'First Post', text: 'Here is my post', comment_counter: 0, like_counter: 0, author: @user1)
+    @post1 = Post.create(title: 'First Post', text: 'Here is my post', comment_counter: 0, like_counter: 0,
+                         author: @user1)
 
     @comment = Comment.create(text: 'Here is my comment', author: @user2, post: @post1)
     puts @comment, @post1
@@ -51,24 +61,23 @@ describe Post, type: :feature do
   it 'should have comment number' do
     visit("users/#{@user1.id}/posts")
 
-    expect(page).to have_content "Comments: #{@post1.comment_counter.to_s}"
+    expect(page).to have_content "Comments: #{@post1.comment_counter}"
   end
 
   it 'should have likes number' do
     visit("users/#{@user1.id}/posts")
 
-    expect(page).to have_content "Likes: #{@post1.like_counter.to_s}"
+    expect(page).to have_content "Likes: #{@post1.like_counter}"
   end
 
   it 'should have pagination post fit the view' do
     visit("users/#{@user1.id}/posts")
 
-    expect(page).to have_content "Pagination"
+    expect(page).to have_content 'Pagination'
   end
   it 'should redirect to a post' do
     visit("users/#{@user1.id}/posts")
-    click_link "#{@post1.title}"
+    click_link @post1.title.to_s
     expect(current_path).to eq(user_post_path(@user1, @post1.id))
   end
-
 end

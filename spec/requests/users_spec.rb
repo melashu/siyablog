@@ -8,7 +8,7 @@ describe 'Users', type: :request do
   end
 
   it 'response status should be correct' do
-       user2 = User.create(name: 'Meshu', photo: 'http://example.com', bio: 'Hi there', posts_counter: 0)
+    user2 = User.create(name: 'Meshu', photo: 'http://example.com', bio: 'Hi there', posts_counter: 0)
     get users_path(user2)
     expect(response).to have_http_status(:ok)
   end
@@ -20,18 +20,18 @@ describe 'Users', type: :request do
   end
 
   it 'should render show template ' do
-       get users_path, params: {id: 26}
+    get users_path, params: { id: 26 }
 
     expect(response).to render_template(:index)
   end
 
   it 'response status should be correct for show action' do
-    get users_path, params: {id: 26}
+    get users_path, params: { id: 26 }
     expect(response).to have_http_status(:ok)
   end
 
   it 'should contains Bio ' do
-    get users_path, params: {id: 26}
+    get users_path, params: { id: 26 }
     expect(response.body).to include 'Copyright'
   end
 end
