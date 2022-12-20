@@ -68,6 +68,5 @@ describe User, type: :feature do
     visit user_posts_path(@user1)
     click_link post.title.to_s
     expect(current_path).to eq("/users/#{@user1.id}/posts/#{post.id}")
-    # expect(current_path).to eq (user_post_url(@user, post.id))
   end
 end

@@ -6,7 +6,6 @@ class User < ApplicationRecord
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   enum status: { draft: 0, completed: 1, published: 2 }
   def recent_post
-    # Post.where(author: self).order(created_at: :desc).limit(3)
     posts.order(created_at: :desc).limit(3)
   end
 end

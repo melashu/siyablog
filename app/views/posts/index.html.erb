@@ -5,7 +5,7 @@
 
 <div class='post-comment'>
 
-<% Post.where(author: @user).each do |post|%>
+<% Post.includes(:comments).where(author: @user).each do |post|%>
 <%= render 'all_post', post: post, user: @user%>
 
 <%= render 'comment', post: post%>
