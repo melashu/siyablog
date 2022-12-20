@@ -16,13 +16,12 @@ describe Post, type: :feature do
     )
 
     @post1 = Post.create(title: 'First Post', text: 'Here is my post', comment_counter: 0, like_counter: 0,
-                         author: @user1)
+                         author: @user2)
 
     @comment = Comment.create(text: 'Here is my comment', author: @user2, post: @post1)
-    puts @comment, @post1
   end
 
-  # test if the user of the post has an image
+
 
   it 'should  have an image' do
     visit("users/#{@user1.id}/posts")
@@ -30,54 +29,53 @@ describe Post, type: :feature do
   end
 
   it 'should have a username' do
-    visit("users/#{@user1.id}/posts")
+    visit("users/#{@user2.id}/posts")
 
     expect(page).to have_content @post1.author.name
   end
-
-  # it 'should have the number of posts' do
-  #   visit("users/#{@user1.id}/posts")
-
-  #   expect(page).to have_content "Number of post: #{@post1.author.posts_counter.to_s}"
-  # end
-
-  it 'should have the post title' do
+  it 'I can see the number of posts the user has written' do
+    visit("users/#{@user2.id}/posts")
+    expect(page).to have_content 'Number of posts: 1'
     visit("users/#{@user1.id}/posts")
+    expect(page).to have_content 'Number of posts: 3'
+  end
+  it 'should have the post title' do
+    visit("users/#{@user2.id}/posts")
 
     expect(page).to have_content(@post1.title)
   end
 
   it 'should have the post body' do
-    visit("users/#{@user1.id}/posts")
+    visit("users/#{@user2.id}/posts")
 
     expect(page).to have_content @post1.text
   end
 
   it 'should see some posts comments' do
-    visit("users/#{@user1.id}/posts")
+    visit("users/#{@user2.id}/posts")
 
     expect(page).to have_content @comment.text
   end
   it 'should have comment number' do
-    visit("users/#{@user1.id}/posts")
+    visit("users/#{@user2.id}/posts")
 
     expect(page).to have_content "Comments: #{@post1.comment_counter}"
   end
 
   it 'should have likes number' do
-    visit("users/#{@user1.id}/posts")
+    visit("users/#{@user2.id}/posts")
 
     expect(page).to have_content "Likes: #{@post1.like_counter}"
   end
 
   it 'should have pagination post fit the view' do
-    visit("users/#{@user1.id}/posts")
+    visit("users/#{@user2.id}/posts")
 
     expect(page).to have_content 'Pagination'
   end
   it 'should redirect to a post' do
-    visit("users/#{@user1.id}/posts")
+    visit("users/#{@user2.id}/posts")
     click_link @post1.title.to_s
-    expect(current_path).to eq(user_post_path(@user1, @post1.id))
+    expect(current_path).to eq(user_post_path(@user2, @post1.id))
   end
 end
