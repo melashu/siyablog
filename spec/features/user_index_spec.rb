@@ -12,10 +12,17 @@ describe User, type: :feature do
                          posts_counter: 0)
   end
 
-  it 'Should have user name John' do
+  it 'Should have user meshu name John' do
     visit users_path
     expect(page).to have_content('John')
     expect(page).to have_content('meshu')
+  end
+
+  it 'I can see the profile picture for each user' do
+    visit ("users/#{@user1.id}")
+    expect(page).to have_css('img', count: 1)
+      visit ("users/#{@user2.id}")
+    expect(page).to have_css('img', count: 1)
   end
 
   it 'When I click on a user, I am redirected to that users show page.' do
