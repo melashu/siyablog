@@ -21,8 +21,6 @@ describe Post, type: :feature do
     @comment = Comment.create(text: 'Here is my comment', author: @user2, post: @post1)
   end
 
-
-
   it 'should  have an image' do
     visit("users/#{@user1.id}/posts")
     expect(page).to have_css('img', count: 1)

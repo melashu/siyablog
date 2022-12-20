@@ -19,9 +19,9 @@ describe User, type: :feature do
   end
 
   it 'I can see the profile picture for each user' do
-    visit ("users/#{@user1.id}")
+    visit("users/#{@user1.id}")
     expect(page).to have_css('img', count: 1)
-      visit ("users/#{@user2.id}")
+    visit("users/#{@user2.id}")
     expect(page).to have_css('img', count: 1)
   end
 
