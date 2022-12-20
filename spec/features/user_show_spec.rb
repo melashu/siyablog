@@ -45,9 +45,7 @@ describe User, type: :feature do
         expect(page).to have_link ('See all post')
     end
      it 'When I click to see all posts, it redirects me to the users posts index page..' do
-      visit user_path(@user1)
-    #   /users/:id
-      
+      visit user_path(@user1)      
         click_link('See all post')
         expect(current_path).to eq (user_posts_path(@user1))
     end
@@ -58,8 +56,10 @@ describe User, type: :feature do
 
      it 'When I click a users post, it redirects me to that posts show page.' do
         post =  Post.create(author: @user1, title: 'Introduction to rails', text: 'Rails is a web',comment_counter:0,like_counter:0)
-        visit user_posts_path(@user1, post)
-        expect(current_path).to eq (user_posts_path(@user1, post))
+        visit user_posts_path(@user1)
+        click_link post.title.to_s
+        expect(current_path).to eq ("/users/#{@user1.id}/posts/#{post.id}")
+        # expect(current_path).to eq (user_post_url(@user, post.id))
     end
 
 
