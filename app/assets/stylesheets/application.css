@@ -207,3 +207,63 @@ footer a,
 footer strong {
   color: #5c4de6;
 }
+
+.form-signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.5rem;
+  font-family: sans-serif;
+}
+
+.form-signup input, textarea{
+  width: 100%;
+  font-size: 1rem;
+  padding: .7rem;
+
+}
+
+.form-signup input{
+  height: 2rem;
+  border-radius: 0rem;
+  outline: none;
+
+}
+
+.form-signup input[type="file"]{
+  margin-bottom:1rem;
+  padding-bottom:2rem;
+}
+.form-signup textarea{
+  height: 4rem;
+}
+
+.form-signup label{
+  font-size: 1rem;
+}
+
+.form-signup .field{
+  line-height: 1rem;
+}
+
+.form-signup em{
+  color: red;
+  font-size:.7rem;
+}
+
+.form-signup .actions {
+  line-height: 1rem;
+
+}
+
+.form-signup input[type="submit"]{
+  color: white;
+  background: #5c4de6;
+ border: none;
+ padding-bottom: 2rem;
+ font-size: 1.2rem;
+ font-weight: bold;
+ border-radius: .45rem;
+ cursor: pointer;
+}
