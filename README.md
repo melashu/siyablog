@@ -10,11 +10,13 @@
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Syia Blog ](#-syia-blog-)
   - [🛠 Built With ](#-built-with-)
+  - [Key Features ](#key-features-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Usage](#usage)
   - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
@@ -30,6 +32,17 @@ This webiste is a fully functional website that will show the list of posts and 
 - Rails 
 - HTML
 - CSS
+<!-- Features -->
+
+## Key Features <a name="key-features"></a>
+
+> The key features of this app.
+
+- **User sign up and authentication**
+- **Enable users to add multiple posts**
+- **Enable users to add comments and linkes**
+- **Enable users to see there latest posts**
+
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -38,10 +51,7 @@ To get a local copy up and running, follow these steps.
 ### Prerequisites
 
 In order to run this project you need to:
-
-- Install Ruby
-- Install rails gem
-- Install pg gem 
+`RUN bunlder install`
 
 ### Setup
 
@@ -64,6 +74,14 @@ To run the project, execute the following command:
 - GitHub: [@melashu](https://github.com/melashu)
 - Twitter: [@meshu102](https://twitter.com/meshu102)
 - LinkedIn: [Melashu Amare](https://www.linkedin.com/in/melashu-amare/)
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> In the future I need to improve the following features.
+
+- [ ] **Add Google, Github and Twitter authentication.**
 
 ## 🤝 Contributing <a name="contributing"></a>
 
