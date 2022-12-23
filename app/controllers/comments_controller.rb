@@ -22,11 +22,10 @@ class CommentsController < ApplicationController
     @comment = Comment.find_by(author: @user, post: @post, id: params[:id])
 
     if @comment.destroy
-      flash[:success] = "Post was successfully deleted"
-      redirect_to user_posts_path
+      flash[:success] = 'Post was successfully deleted'
     else
-      flash[:error] = "Comment not Deleted"
-      redirect_to user_posts_path
+      flash[:error] = 'Comment not Deleted'
     end
+    redirect_to user_posts_path
   end
 end

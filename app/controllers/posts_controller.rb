@@ -41,6 +41,7 @@ class PostsController < ApplicationController
       render :index, locals: { user: current_user }
     end
   end
+
   private
 
   def check_param

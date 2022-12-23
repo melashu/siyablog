@@ -20,6 +20,4 @@ class Post < ApplicationRecord
   def update_post_counter_destroy
     author.decrement!(:posts_counter)
   end
-
-
 end
