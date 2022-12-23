@@ -6,7 +6,10 @@
     <p class='bio'><%= @user.bio%> </p>
     </div>
 
-<%= render partial: 'post', collection: @user.recent_post%>
+ <%@user.recent_post.each do |post|%>
+    <%= render 'post', post: post, user:post.author %>
+ <%end%>
+
 <%= link_to 'See all post', user_posts_path(@user), class: 'btn-all-post button'%>
 
 </div>

@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.includes(:posts).find_by(id: params[:user_id])
   end
 
   # posts/new
   def show
-    @user = params[:user_id]
     @post_id = params[:id]
     @post = Post.find_by(id: @post_id)
   end
@@ -25,6 +26,19 @@ class PostsController < ApplicationController
     else
       flash.now[:error] = 'Something went wrong!'
       render :new, locals: { user: current_user }
+    end
+  end
+
+  def destroy
+    user_id = params[:user_id].to_i
+    @user = User.find(user_id)
+    @post = Post.find_by(author: @user)
+    if @post.destroy
+      flash[:success] = 'Post Deleted!'
+      redirect_to user_posts_path
+    else
+      flash.now[:error] = 'Something went wrong!'
+      render :index, locals: { user: current_user }
     end
   end
 

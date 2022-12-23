@@ -1,7 +1,10 @@
 <div class='post'>
-<%= link_to user_post_path(post) , class:'user-link', id:'user-link' do%>
+<%= link_to user_post_path(user, post) , class:'user-link', id:'user-link' do%>
 <h2>Post Title: <%= post.title%> </h2>
 <p class='post-desc'><%= post.text%></p>
 <%end%>
 <p>Comments: <%= post.comment_counter || 0%>, Likes: <%= post.like_counter || 0%></p>
+   <% if can? :destroy, post%>
+    <%= button_to "Delete Post", "/users/#{user.id}/posts/#{post.id}", method: :delete, class: 'btn-comment button'%>
+   <%end%>
 </div>
