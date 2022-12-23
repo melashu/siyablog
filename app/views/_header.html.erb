@@ -4,6 +4,20 @@
     <%end%>
 
     <ul>
-        <li><%= link_to "User List", users_path, class:'nav-link'%> </li>
+        <%= link_to "User List", users_path, class:'nav-link'%> </li>
     </ul>
+        <div class='in-out'>
+        <% if user_signed_in?%>
+          Welcome <%= current_user.name%>!
+
+           <%# <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete } , class:'nav-link'  %> 
+       <%= button_to 'logout', destroy_user_session_path, data: {turbo: false}, method: :delete, class: "nav-link" %>
+
+        <%else%>
+        <%= link_to "Sign In", new_user_session_path ,class:'nav-link'%> 
+
+        <%end%>
+        </li>
+    <%# </ul> %>
+ 
 </header>
