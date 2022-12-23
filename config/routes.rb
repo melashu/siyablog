@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root "users#index"
+  root to: "users#index"
 end

@@ -296,10 +296,10 @@ textarea {
   line-height: 1rem;
 }
 
-.form-signup em {
+/* .form-signup em {
   color: red;
   font-size: 0.7rem;
-}
+} */
 
 .form-signup .actions {
   line-height: 1rem;
