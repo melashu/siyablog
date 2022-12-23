@@ -45,19 +45,19 @@ ul {
   list-style: none;
 }
 
-.in-out{
+.in-out {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
-.in-out button{
-border: none;
-outline: none;
-background-color: transparent;
-text-transform: capitalize;
- font-size: 24px;
+.in-out button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-transform: capitalize;
+  font-size: 24px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: #fff;
 }
@@ -226,17 +226,18 @@ footer strong {
   color: #5c4de6;
 }
 
-.login{
+.login {
   padding: 10px;
   background-color: #b3aeae1e;
   margin: 0 auto;
   width: 40%;
-    /* display: flex;
+
+  /* display: flex;
   flex-direction: column;
   justify-content: center; */
 }
 
-.login input{
+.login input {
   width: 100%;
   padding: 8px;
   outline: none;
@@ -244,16 +245,16 @@ footer strong {
   border: none;
 }
 
-.btn-login{
- color: #fff;
- background: #5c4de6;
- border: none;
- padding-bottom: 2rem;
- font-size: 1.2rem;
- font-weight: bold;
- border-radius: .45rem;
- cursor: pointer;
- margin-top: 30px;
+.btn-login {
+  color: #fff;
+  background: #5c4de6;
+  border: none;
+  padding-bottom: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 0.45rem;
+  cursor: pointer;
+  margin-top: 30px;
 }
 
 .form-signup {
@@ -265,62 +266,62 @@ footer strong {
   font-family: sans-serif;
 }
 
-.form-signup input, textarea{
+.form-signup input,
+textarea {
   width: 100%;
   font-size: 1rem;
-  padding: .7rem;
-
+  padding: 0.7rem;
 }
 
-.form-signup input{
+.form-signup input {
   height: 2rem;
-  border-radius: 0rem;
+  border-radius: 0;
   outline: none;
 }
 
-.form-signup input[type="file"]{
-  margin-bottom:1rem;
-  padding-bottom:2rem;
+.form-signup input[type="file"] {
+  margin-bottom: 1rem;
+  padding-bottom: 2rem;
 }
-.form-signup textarea{
+
+.form-signup textarea {
   height: 4rem;
 }
 
-.form-signup label{
+.form-signup label {
   font-size: 1rem;
 }
 
-.form-signup .field{
+.form-signup .field {
   line-height: 1rem;
 }
 
-.form-signup em{
+.form-signup em {
   color: red;
-  font-size:.7rem;
+  font-size: 0.7rem;
 }
 
 .form-signup .actions {
   line-height: 1rem;
-
 }
 
-.form-signup input[type="submit"]{
- color: white;
- background: #5c4de6;
- border: none;
- padding-bottom: 2rem;
- font-size: 1.2rem;
- font-weight: bold;
- border-radius: .45rem;
- cursor: pointer;
+.form-signup input[type="submit"] {
+  color: white;
+  background: #5c4de6;
+  border: none;
+  padding-bottom: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 0.45rem;
+  cursor: pointer;
 }
 
-.link{
+.link {
   text-align: center;
   padding: 5px;
 }
 
-.title{
+.title {
   text-align: center;
-  padding:10px;
+  padding: 10px;
 }
