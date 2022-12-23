@@ -15,4 +15,18 @@ class CommentsController < ApplicationController
       render :new, locals: { user: current_user }, status: 302
     end
   end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find_by(author: @user, post: @post, id: params[:id])
+
+    if @comment.destroy
+      flash[:success] = "Post was successfully deleted"
+      redirect_to user_posts_path
+    else
+      flash[:error] = "Comment not Deleted"
+      redirect_to user_posts_path
+    end
+  end
 end

@@ -3,7 +3,7 @@
     <% post.recent_five_comment.each do |comment|%>
      <p><strong><%=comment.author.name%> </strong> : <span><%=comment.text%></span></p>
      <%if can? :destroy, Comment%>
-       <%= button_to "Delete Comment", user_post_comments_path(comment.author,comment.post), method: :delete, class: 'btn-comment button'%>
+       <%= button_to "Delete Comment", "/users/#{comment.author.id}/posts/#{comment.post.id}/comments/#{comment.id}", method: :delete, class: 'btn-comment button'%>
 
      <%end%>
       <%end%>
