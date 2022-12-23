@@ -1,15 +1,15 @@
 <div class='post-container'>
 <h4 style='color:green'><%=  flash[:success] %> </h4>
+<%if user_signed_in?%>
 <%= button_to "Add post", new_user_post_path, method: 'get', form_class: 'comment-form', class: 'button'%>
+<%end%>
 <%= render '/users/user', user: @user %>
 
 <div class='post-comment'>
-
 <% Post.includes(:comments).where(author: @user).each do |post|%>
 <%= render 'all_post', post: post, user: @user%>
 
 <%= render 'comment', post: post%>
-
 <%end%>
 <%= link_to 'Pagination', users_path, class: 'btn-all-post button' %>
 <div>

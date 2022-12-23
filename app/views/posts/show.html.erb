@@ -5,11 +5,12 @@
      <strong>Comments: <%= @post.comment_counter || 0%>, Likes: <%= Like.where(post: @post).size%></strong>
     </div>
     <p class='desc'><%=@post.text%></p>
-
+  <%if user_signed_in? %>
    <div class='comment-like-container'>
     <%= link_to "Add Comment", new_user_post_comment_path(@post.author, @post), class: 'btn-comment button'%>
-   <%= button_to "Like",user_post_likes_path(@post.author, @post), form_class: 'like', class: 'btn-like button' %>
+    <%= button_to "Like",user_post_likes_path(@post.author, @post), form_class: 'like', class: 'btn-like button' %>
    </div>
+   <%end%>
 
     <%= render 'comment', post: @post%>
 

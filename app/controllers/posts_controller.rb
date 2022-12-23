@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.includes(:posts).find_by(id: params[:user_id])
   end
 
   # posts/new
   def show
-    @user = params[:user_id]
     @post_id = params[:id]
     @post = Post.find_by(id: @post_id)
   end
