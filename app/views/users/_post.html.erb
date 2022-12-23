@@ -5,6 +5,6 @@
 <%end%>
 <p>Comments: <%= post.comment_counter || 0%>, Likes: <%= post.like_counter || 0%></p>
    <% if can? :destroy, post%>
-    <%= button_to "Delete Post", user_posts_path(user), method: :delete, class: 'btn-comment button'%>
+    <%= button_to "Delete Post", "/users/#{user.id}/posts/#{post.id}", method: :delete, class: 'btn-comment button'%>
    <%end%>
 </div>
