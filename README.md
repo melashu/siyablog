@@ -10,6 +10,7 @@
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Syia Blog ](#-syia-blog-)
   - [🛠 Built With ](#-built-with-)
+  - [Tech Stack ](#tech-stack-)
   - [Key Features ](#key-features-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
@@ -32,16 +33,39 @@ This webiste is a fully functional website that will show the list of posts and 
 - Rails 
 - HTML
 - CSS
-<!-- Features -->
+## Tech Stack <a name="tech-stack"></a>
+
+> Describe the tech stack and include only the relevant sections that apply to your project.
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li>HTML, and CSS</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://rubyinstaller.org/">Rails</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
 
 ## Key Features <a name="key-features"></a>
 
 > The key features of this app.
 
-- **User sign up and authentication**
-- **Enable users to add multiple posts**
-- **Enable users to add comments and linkes**
-- **Enable users to see there latest posts**
+- **User sign up and authentication.**
+- **Enable users to add multiple posts.**
+- **Enable users to add comments and likes.**
+- **Enable users to see their latest posts.**
 
 
 ## 💻 Getting Started <a name="getting-started"></a>
