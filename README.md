@@ -47,7 +47,7 @@ This webiste is a fully functional website that will show the list of posts and 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://rubyinstaller.org/">Rails</a></li>
+    <li><a href="https://rubyinstaller.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
