@@ -36,12 +36,30 @@ header {
   padding: 5px 10px;
   color: #f2f2f2;
   height: 80px;
+  justify-content: space-between;
   position: sticky;
   top: 0;
 }
 
 ul {
   list-style: none;
+}
+
+.in-out{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.in-out button{
+border: none;
+outline: none;
+background-color: transparent;
+text-transform: capitalize;
+ font-size: 24px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #fff;
 }
 
 .logo h1 {
@@ -208,6 +226,36 @@ footer strong {
   color: #5c4de6;
 }
 
+.login{
+  padding: 10px;
+  background-color: #b3aeae1e;
+  margin: 0 auto;
+  width: 40%;
+    /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+}
+
+.login input{
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+}
+
+.btn-login{
+ color: #fff;
+ background: #5c4de6;
+ border: none;
+ padding-bottom: 2rem;
+ font-size: 1.2rem;
+ font-weight: bold;
+ border-radius: .45rem;
+ cursor: pointer;
+ margin-top: 30px;
+}
+
 .form-signup {
   display: flex;
   flex-direction: column;
@@ -228,7 +276,6 @@ footer strong {
   height: 2rem;
   border-radius: 0rem;
   outline: none;
-
 }
 
 .form-signup input[type="file"]{
@@ -258,12 +305,22 @@ footer strong {
 }
 
 .form-signup input[type="submit"]{
-  color: white;
-  background: #5c4de6;
+ color: white;
+ background: #5c4de6;
  border: none;
  padding-bottom: 2rem;
  font-size: 1.2rem;
  font-weight: bold;
  border-radius: .45rem;
  cursor: pointer;
+}
+
+.link{
+  text-align: center;
+  padding: 5px;
+}
+
+.title{
+  text-align: center;
+  padding:10px;
 }
