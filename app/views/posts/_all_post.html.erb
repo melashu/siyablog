@@ -6,7 +6,7 @@
     <%end%>
     <p>Comments: <%= Comment.where(post: post).size%>, Likes: <%= Like.where(post: post).size%></p>
    <%if can? :destroy, post%>
-    <%= button_to "Delete Post", user_posts_path, method: :delete, class: 'btn-comment button'%>
+    <%= button_to "Delete Post", "/users/#{user.id}/posts/#{post.id}", method: :delete, class: 'btn-comment button'%>
    <%end%>
 
 </div>

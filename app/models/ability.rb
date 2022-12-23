@@ -8,6 +8,8 @@ class Ability
 
     can :destroy, Post, author: user
     can :destroy, Comment, author: user
+    can :create, Post, author: user
+    can :create, Like
     can :create, Comment
     return unless user.admin?
 
