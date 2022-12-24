@@ -46,6 +46,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_model_serializers (0.10.13)
+      actionpack (>= 4.1, < 7.1)
+      activemodel (>= 4.1, < 7.1)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (7.0.4)
       activesupport (= 7.0.4)
       globalid (>= 0.3.6)
@@ -84,6 +89,8 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    case_transform (0.2)
+      activesupport
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     debug (1.7.0)
@@ -95,7 +102,20 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-jwt (0.10.0)
+      devise (~> 4.0)
+      warden-jwt_auth (~> 0.6)
     diff-lcs (1.5.0)
+    dry-auto_inject (0.9.0)
+      dry-container (>= 0.3.4)
+    dry-configurable (0.16.1)
+      dry-core (~> 0.6)
+      zeitwerk (~> 2.6)
+    dry-container (0.11.0)
+      concurrent-ruby (~> 1.0)
+    dry-core (0.9.1)
+      concurrent-ruby (~> 1.0)
+      zeitwerk (~> 2.6)
     erubi (1.11.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -111,6 +131,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.3)
+    jsonapi-renderer (0.2.2)
+    jwt (2.6.0)
     launchy (2.5.0)
       addressable (~> 2.7)
     letter_opener (1.8.1)
@@ -249,6 +271,11 @@ GEM
     unicode-display_width (2.3.0)
     warden (1.2.9)
       rack (>= 2.0.9)
+    warden-jwt_auth (0.7.0)
+      dry-auto_inject (~> 0.8)
+      dry-configurable (~> 0.13)
+      jwt (~> 2.1)
+      warden (~> 1.2)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -270,11 +297,13 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
+  active_model_serializers (~> 0.10.13)
   bootsnap
   cancancan
   capybara
   debug
   devise
+  devise-jwt
   importmap-rails
   jbuilder
   letter_opener
