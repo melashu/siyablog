@@ -15,7 +15,6 @@ class User < ApplicationRecord
   enum status: { draft: 0, completed: 1, published: 2 }
   has_one_attached :photo
 
-
   def recent_post
     posts.order(created_at: :desc).limit(3)
   end

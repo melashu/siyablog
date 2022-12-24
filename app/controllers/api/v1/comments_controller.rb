@@ -1,10 +1,10 @@
 class Api::V1::CommentsController < ApplicationController
   before_action :authenticate_user!, except: %i[index]
-  
-    def index
-        comment = Comment.all.where(author_id: params[:user_id], post_id: params[:post_id]).includes(:author)
-        render json: comment
-    end
+
+  def index
+    comment = Comment.all.where(author_id: params[:user_id], post_id: params[:post_id]).includes(:author)
+    render json: comment
+  end
 
   def create
     posts = Post.find(params[:post_id])
