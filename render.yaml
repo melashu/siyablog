@@ -1,7 +1,5 @@
-databases:
-  - name: sia_blog
-    databaseName: sia_blog_production
-    user: meshu
+databases: 
+  - name: sia_blog_production
     ipAllowList: []
 services: 
   - type: web
@@ -21,6 +19,7 @@ services:
     name: redis
     ipAllowList: []
     plan: free
+    maxmemoryPolicy: noeviction
 
 
 
