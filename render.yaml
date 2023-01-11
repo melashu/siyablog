@@ -1,0 +1,25 @@
+databases:
+  - name: sia_blog
+    databaseName: sia_blog_production
+    user: meshu
+services: 
+  - type: web
+    name: blog_app
+    env: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars: 
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase: 
+          name: sia_blog_production
+          property: connectionString
+  - type: redis
+    name: redis
+    plan: free
+
+
+
+    
