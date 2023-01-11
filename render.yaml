@@ -2,6 +2,7 @@ databases:
   - name: sia_blog
     databaseName: sia_blog_production
     user: meshu
+    ipAllowList: []
 services: 
   - type: web
     name: blog_app
@@ -18,6 +19,7 @@ services:
           property: connectionString
   - type: redis
     name: redis
+    ipAllowList: []
     plan: free
 
 
