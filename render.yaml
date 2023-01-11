@@ -6,7 +6,7 @@ databases:
 services: 
   - type: web
     name: blog_app
-    env: ruby
+    env: ruby 
     plan: free
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
